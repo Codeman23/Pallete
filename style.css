@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Muli", sans-serif;
+  color: rgb(51, 51, 51);
+}
+button {
+  font-family: "Muli", sans-serif;
+}
+path,
+i,
+svg {
+  pointer-events: none;
+}
+.colors {
+  min-height: 84vh;
+  display: flex;
+  color: rgb(212, 212, 212);
+}
+.colors__item {
+  height: 84vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  overflow: hidden;
+}
+.colors__title {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.colors__sliders {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0%;
+  overflow: hidden;
+  background-color: #131313;
+  opacity: 0;
+  padding: 1rem;
+  width: 80%;
+  border-top-right-radius: 1rem;
+  pointer-events: none;
+  border-top-left-radius: 1rem;
+  transform: translateY(100px);
+  transition: all 0.5s ease-in-out;
+}
+.colors__sliders.active {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: all;
+}
+.colors__sliders button,
+.save__closeBtn,
+.library__closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  border: none;
+  background-color: #191919;
+  color: #a1a1a1;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.colors__sliders button:hover,
+.save__closeBtn:hover,
+.library__closeBtn:hover {
+  background-color: #000;
+  color: #ecb615;
+}
+
+.colors__sliders button {
+  background-color: transparent;
+}
+
+.colors__controls {
+  display: flex;
+  flex-direction: column;
+}
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 16vh;
+  background-color: #1e1e1e;
+  color: #a1a1a1;
+}
+.panel button {
+  font-size: 1.2rem;
+  margin: .5rem 1rem;
+  padding: 1rem 2rem;
+  background-color: #101010;
+  border: none;
+  color: #a1a1a1;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+.panel__btnWrap:hover {
+  color: white;
+}
+
+.panel__btnWrap:hover button {
+  background-color: #000000;
+  color: #ecb615;
+}
+
+.panel__txt {
+  font-size: 1.2rem;
+  transition: color .3s ease;
+}
+.panel__btnWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.colors__adjust,
+.colors__lock {
+  font-size: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 2rem 0rem;
+}
+
+/* Slider Stuff */
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.copy,
+.save,
+.library {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.copy__popup,
+.save__popup,
+.library__popup {
+  background: #d7d7d7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: .3rem;
+  transition: transform 0.5s ease;
+  transform: translateY(-2rem);
+  min-width: 30%;
+  min-height: 30vh;
+  overflow: hidden;
+}
+.copy__color,
+.save__title,
+.library__title {
+  font-size: 2rem;
+  padding: 2rem;
+}
+.copy.active,
+.save.active,
+.library.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.copy__popup.active,
+.save__popup.active,
+.library__popup.active {
+  transform: translateY(0rem);
+}
+
+.save__name {
+  font-size: 1.5rem;
+  padding: 1rem;
+  outline:none;
+}
+.save__closeBtn,
+.library__closeBtn {
+  padding: 0.5rem;
+}
+.save__submit {
+  margin: 2rem;
+  padding: 1rem 3rem;
+  background-color: #2c2c2c;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.save__submit:hover {
+  background-color: #000;
+}
+
+.library__popup {
+  min-width: 40%;
+  padding: 1rem;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  max-height: 50vh;
+}
+.customPalette {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 2rem;
+}
+.smallPreview {
+  display: flex;
+  flex: 1;
+}
+.smallPreview__item {
+  height: 5rem;
+  flex: 1;
+}
+.customPalette__title {
+  flex: 1;
+  font-size: 1.2rem;
+}
+
+.pickPaletteBtn {
+  height: 5rem;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  background-color: #131313;
+  color: #a1a1a1;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+.pickPaletteBtn:hover {
+  color: white;
+  background-color: #000;
+}
