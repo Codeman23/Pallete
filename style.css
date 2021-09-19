@@ -41,9 +41,9 @@ svg {
   bottom: 0%;
   overflow: hidden;
   background-color: #131313;
-  /*opacity: 0;*/
-  /*pointer-events: none;*/
-  /*transform: translateY(100px);*/
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100px);
   padding: 1rem;
   width: 80%;
   border-top-right-radius: 1rem;
@@ -173,12 +173,22 @@ input[type="range"] {
   min-height: 30vh;
   overflow: hidden;
 }
-.copy__color,
+
+.copy__popup {
+  background: white;
+}
+
 .save__title,
 .library__title {
   font-size: 2rem;
   padding: 2rem;
 }
+
+.copy__color {
+  font-size: 3rem;
+  padding: 1rem;
+}
+
 .copy.active,
 .save.active,
 .library.active {
