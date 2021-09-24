@@ -248,7 +248,7 @@ input[type="range"] {
   flex: 1;
 }
 .customPalette__title {
-  flex: 1;
+  flex: .35;
   font-size: 1.2rem;
 }
 
